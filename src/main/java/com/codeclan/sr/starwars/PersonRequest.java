@@ -11,7 +11,6 @@ public class PersonRequest extends SWRequest implements SWItemRequest {
 	public SWResult send() {
 		rawResult = this.request.getResponse();
 		PersonParser parser = new PersonParser(rawResult);
-		parser.parse();
 		return parser.result();
 	};
 }

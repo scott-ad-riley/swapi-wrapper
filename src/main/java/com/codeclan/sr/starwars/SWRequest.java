@@ -21,4 +21,5 @@ public abstract class SWRequest {
 		this.url = "http://swapi.co/api/" + collectionName;
 		this.request = new Request(this.url);
 	}
+	
 }

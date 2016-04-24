@@ -4,7 +4,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ItemTests {
-	// APITest.java
+
 	@Test
 	public void testPeopleRequestName() {
 		int lukeId = 1;

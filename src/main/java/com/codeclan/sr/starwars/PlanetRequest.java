@@ -11,7 +11,6 @@ public class PlanetRequest extends SWRequest implements SWItemRequest {
 	public SWResult send() {
 		rawResult = this.request.getResponse();
 		PlanetParser parser = new PlanetParser(rawResult);
-		parser.parse();
 		return parser.result();
 	};
 }
