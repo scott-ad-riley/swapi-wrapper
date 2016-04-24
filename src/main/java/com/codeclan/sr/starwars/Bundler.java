@@ -20,6 +20,11 @@ public class Bundler {
 		this.response = new JSONArray();
 	}
 	
+	public Bundler(String nextUrl, JSONArray initialArray) {
+		this.currentUrl = nextUrl;
+		this.response = initialArray;
+	}
+	
 	public String collect() {
 		String pageString = requestPage();
 		JSONParser parser = new JSONParser();
@@ -42,12 +47,12 @@ public class Bundler {
 		return response.toString();
 	}
 	
-	public String requestPage() {
+	private String requestPage() {
 		Request request = new Request(currentUrl);
 		return request.getResponse();
 	}
 	
-	public void addToResponse(JSONArray result) {
+	private void addToResponse(JSONArray result) {
 		String p;
         Iterator<JSONObject> resultIterator = result.iterator();
         while(resultIterator.hasNext()) {

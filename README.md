@@ -39,21 +39,21 @@ Request Film list, filtering using luke
 
 ### Collections
 
+* ~~People~~
 * Planets
 * Spaceships
 * Vehicles
-* ~~People~~
 * Films
 * Species
 
 
 ## TODO
-* Models/Requests/Parsers for each collection item with correct values 
-  * Likely inherit from one parent object?
-    * Build first and then see how we can refactor
-* Models/Requests/Parsers for each collection
-  * See problem below
-  * Dealing with paginated API Responses from swapi
+* ~~Models/Requests/Parsers for each collection item with correct values~~
+  * ~~Likely inherit from one parent object?~~
+    * ~~Build first and then see how we can refactor~~
+* ~~Models/Requests/Parsers for each collection~~
+  * ~~See problem below~~
+  * ~~Dealing with paginated API Responses from swapi~~
 * Collection filtering
 * Refactoring
 

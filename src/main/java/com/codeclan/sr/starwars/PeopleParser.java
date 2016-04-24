@@ -18,12 +18,25 @@ public class PeopleParser implements SWCollectionParser {
 		JSONParser parser = new JSONParser();
 		this.result = new ArrayList<Person>();
 		Person p;
+		
 		try {
 			JSONObject parseInput = (JSONObject) parser.parse(rawResult);
 			JSONArray people = (JSONArray) parseInput.get("results");
-	        Iterator<JSONObject> personIterator = people.iterator();
+			if (parseInput.get("next") != null) {
+				Bundler bundler = new Bundler((String) parseInput.get("next"), people);
+				bundler.collect();
+				people = bundler.response;
+			}
+	        Iterator<Object> personIterator = people.iterator();
 	        while(personIterator.hasNext()) {
-	            p = PersonParser.parse(personIterator.next());
+	        	Object iteration = personIterator.next(); 
+	        	JSONObject personObj;
+	        	if (iteration instanceof String) {
+	        		personObj = (JSONObject) parser.parse((String) iteration);
+	        	} else {
+	        		personObj = (JSONObject) iteration;
+	        	}
+	        	p = PersonParser.parse(personObj);
 	            result.add(p);
 	        }
 		} catch (ParseException e) {

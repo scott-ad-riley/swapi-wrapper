@@ -24,14 +24,18 @@ public class PersonParser implements SWItemParser {
 	
 	public PersonParser(JSONObject parseInput) {
 		this.result = new Person();
+		System.out.println("before cast");
 		this.result.name = (String) parseInput.get("name");
+		System.out.println("after cast");
 	}
 	
 	static Person parse(JSONObject parsedJSON) {
 		// this feels like bad practice/bad idea
 		// Static method to create an instance of the class it's in
+		
+		System.out.println(parsedJSON);
 		PersonParser self = new PersonParser(parsedJSON);
-		return (Person) self.result();
+		return self.result();
 	}
 	
 	@Override
