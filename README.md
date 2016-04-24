@@ -60,6 +60,9 @@ Request Film list, filtering using luke
 ## Questions/Problems
 * If my .send() method from SWRequest abstract class is specified to return a SWResult, how can i let it return an ArrayList<SWResult> if you get a list of items?
   * What if we have two abstract classes, one SWRequestItem and one SWRequestCollection. The first behaves as normal, but the second's .send() returns ArrayList<SWResult>?
-  * SWRequestCollection then extends from ArrayList<SWResult>
-  * This might break LSP (Liskov Substitution Principle - read more later)
+    * SWRequestCollection then extends from ArrayList<SWResult>
+    * This might break LSP (Liskov Substitution Principle - read more later)
+  * What if we convert SWRequest to an interface?
+    * How to handle default behaviour?
+
 * Deal with what to call species (Plural and Singular are the same word)

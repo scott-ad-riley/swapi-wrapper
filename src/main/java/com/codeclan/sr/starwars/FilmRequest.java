@@ -1,13 +1,18 @@
 package com.codeclan.sr.starwars;
 
-public class FilmRequest extends SWRequest {
+public class FilmRequest implements SWRequest {
+	
+	String rawResult;
+	String url;
+	Request request;
+	SWResult result;
 	
 	public FilmRequest(int filmId) {
-		super("http://swapi.co/api/films/" + filmId);
+		rawResult = "";
+		request = new Request("http://swapi.co/api/films/" + filmId);
 	}
 
-	@Override
-	protected SWResult send() {
+	public SWResult send() {
 		rawResult = this.request.getResponse();
 		FilmParser parser = new FilmParser(rawResult);
 		parser.parse();
