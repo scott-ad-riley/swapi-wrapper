@@ -1,15 +1,11 @@
 package com.codeclan.sr.starwars;
 
-public class PlanetRequest implements SWRequest {
-	
-	String rawResult;
-	String url;
-	Request request;
+public class PlanetRequest extends SWRequest implements SWItemRequest {
+
 	SWResult result;	
 	
 	public PlanetRequest(int planetId) {
-		rawResult = "";
-		request = new Request("http://swapi.co/api/planets/" + planetId);
+		super(planetId, "planets");
 	}
 
 	public SWResult send() {

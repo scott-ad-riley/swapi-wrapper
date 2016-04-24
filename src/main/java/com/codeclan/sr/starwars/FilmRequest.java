@@ -1,15 +1,9 @@
 package com.codeclan.sr.starwars;
 
-public class FilmRequest implements SWRequest {
-	
-	String rawResult;
-	String url;
-	Request request;
-	SWResult result;
+public class FilmRequest extends SWRequest implements SWItemRequest {
 	
 	public FilmRequest(int filmId) {
-		rawResult = "";
-		request = new Request("http://swapi.co/api/films/" + filmId);
+		super(filmId, "films");
 	}
 
 	public SWResult send() {

@@ -1,7 +1,24 @@
 package com.codeclan.sr.starwars;
 
-public interface SWRequest {
+public abstract class SWRequest {
 	
-	public abstract SWResult send();
-
+	String rawResult;
+	String url;
+	Request request;
+	
+	private SWRequest() {
+		rawResult = "";
+	}
+	
+	public SWRequest(int itemId, String collectionName) {
+		this();
+		this.url = "http://swapi.co/api/" + collectionName + "/" + itemId;
+		this.request = new Request(this.url);
+	}
+	
+	public SWRequest(String collectionName) {
+		this();
+		this.url = "http://swapi.co/api/" + collectionName;
+		this.request = new Request(this.url);
+	}
 }

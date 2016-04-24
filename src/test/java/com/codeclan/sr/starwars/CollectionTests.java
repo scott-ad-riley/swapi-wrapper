@@ -7,7 +7,7 @@ public class CollectionTests {
 	// APITest.java
 	@Test
 	public void testPersonRequestLength() {
-		SWRequest request = new PeopleRequest();
+		SWItemRequest request = new PeopleRequest();
 		Person luke = (Person) request.send();
 		assertTrue(luke.getName().equals("Luke Skywalker"));
 	}

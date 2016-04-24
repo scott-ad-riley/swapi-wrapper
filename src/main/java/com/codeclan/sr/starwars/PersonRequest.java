@@ -1,15 +1,11 @@
 package com.codeclan.sr.starwars;
 
-public class PersonRequest implements SWRequest {
+public class PersonRequest extends SWRequest implements SWItemRequest {
 	
-	String rawResult;
-	String url;
-	Request request;
 	SWResult result;
 	
 	public PersonRequest(int personId) {
-		rawResult = "";
-		request = new Request("http://swapi.co/api/people/" + personId);
+		super(personId, "people");
 	}
 
 	public SWResult send() {
