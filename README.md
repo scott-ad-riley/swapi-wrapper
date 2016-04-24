@@ -42,7 +42,7 @@ Request Film list, filtering using luke
 * Planets
 * Spaceships
 * Vehicles
-* People
+* ~~People~~
 * Films
 * Species
 
