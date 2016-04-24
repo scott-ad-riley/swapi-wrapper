@@ -10,7 +10,6 @@ public class ItemTests {
 		int lukeId = 1;
 		SWRequest request = new PersonRequest(lukeId);
 		Person luke = (Person) request.send();
-		System.out.println(luke.getName());
 		assertTrue(luke.getName().equals("Luke Skywalker"));
 	}
 	
@@ -19,7 +18,14 @@ public class ItemTests {
 		int tatooineId = 1;
 		SWRequest request = new PlanetRequest(tatooineId);
 		Planet tatooine = (Planet) request.send();
-		System.out.println(tatooine.getName());
 		assertTrue(tatooine.getName().equals("Tatooine"));
+	}
+	
+	@Test
+	public void testFilmRequestTitle() {
+		int aNewHopeId = 1;
+		SWRequest request = new FilmRequest(aNewHopeId);
+		Film aNewHope = (Film) request.send();
+		assertTrue(aNewHope.getTitle().equals("A New Hope"));
 	}
 }
