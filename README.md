@@ -44,3 +44,4 @@
   * What if we have two abstract classes, one SWRequestItem and one SWRequestCollection. The first behaves as normal, but the second's .send() returns ArrayList<SWResult>?
   * SWRequestCollection then extends from ArrayList<SWResult>
   * This might break LSP (Liskov Substitution Principle - read more later)
+* Deal with collections spanning multiple pages
